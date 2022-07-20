@@ -1,12 +1,16 @@
 import './App.css';
 import SelaHeader from './components/SelaHeader';
-
+import {
+} from 'semantic-ui-react'
+import ListExampleHorizontal from './components/mainBanner';
 
 function App() {
   return (
     <div className="App">
-      <SelaHeader name={"Jimin"} author={"Jimin"}/>
+      <SelaHeader/>
+      <ListExampleHorizontal/>
     </div>
+    
   );
 }
 
