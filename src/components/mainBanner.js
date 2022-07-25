@@ -5,7 +5,7 @@ import {
     Button
 } from 'semantic-ui-react'
 
-const ListExampleHorizontal = () => (
+const Banner = () => (
   <List horizontal style={
     {margin:0,
     paddingRight:300,
@@ -104,5 +104,5 @@ const ListExampleHorizontal = () => (
   </List>
 )
 
-export default ListExampleHorizontal
+export default Banner
 

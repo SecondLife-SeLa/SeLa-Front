@@ -2,13 +2,15 @@ import './App.css';
 import SelaHeader from './components/SelaHeader';
 import {
 } from 'semantic-ui-react'
-import ListExampleHorizontal from './components/mainBanner';
+import Banner from './components/mainBanner';
+import Board from './components/mainBoard';
 
 function App() {
   return (
     <div className="App">
       <SelaHeader/>
-      <ListExampleHorizontal/>
+      <Banner/>
+      <Board/>
     </div>
     
   );
