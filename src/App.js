@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import SelaHeader from './components/SelaHeader';
+import {
+} from 'semantic-ui-react'
+import Banner from './components/mainBanner';
+import Board from './components/mainBoard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          b2 jimin!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SelaHeader/>
+      <Banner/>
+      <Board/>
     </div>
+    
   );
 }
 
