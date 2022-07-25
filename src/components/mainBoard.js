@@ -2,18 +2,21 @@ import {
     Segment,
     Grid,
     Header,
-    Image,
+    Icon,
     List
  } from "semantic-ui-react"
 
  const Board = () => (
-    <Segment style={{ padding: '0em' }} vertical>
+    <Segment style={{ 
+        paddingRight: '18em',
+        paddingLeft:'18em',
+        width:'100%'}} vertical>
         <Grid celled='internally' columns='equal' stackable>
             <Grid.Row textAlign='center'>
             <Grid.Column style={{ 
                 paddingBottom: '5em', 
                 paddingTop: '5em' ,
-                padding:'85px'}}>
+                padding:'4em'}}>
                 <Header as='h3' style={{ 
                     fontSize: '3em',
                     paddingBottom: '30px',
@@ -23,53 +26,72 @@ import {
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 1</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 2</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 3</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 4</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 5</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
             </Grid.Column>
             <Grid.Column style={{ 
                 paddingBottom: '5em', 
                 paddingTop: '5em' ,
-                padding:'85px',
-                marginRight:'15px'}}>
+                padding:'4em',}}>
                 <Header as='h3' style={{ 
                     fontSize: '3em',
                     paddingBottom: '30px',
@@ -80,46 +102,66 @@ import {
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 1</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 2</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 3</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 4</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
 
                 <List horizontal style={{
                     width:'100%',
                     marginBottom:'15px'}}>
-                    <List.Item style={{float:'left'}}>TOP 2</List.Item>
+                    <List.Item style={{float:'left',fontSize:'1.5rem',fontWeight:'bold'}}>TOP 5</List.Item>
                     <List.Item>글 제목(링크 걸기)</List.Item>
-                    <List.Item style={{float:'right'}}>추천수</List.Item>
-                    <List.Item style={{float:'right'}}>댓글수</List.Item>
+                    <List.Item style={{float:'right'}}>
+                        <Icon size='large' name="thumbs up"></Icon>
+                    </List.Item>
+                    <List.Item style={{float:'right',marginRight:'0.5em'}}>
+                        <Icon size='large' name="comment alternate"></Icon>
+                    </List.Item>
                 </List>
             </Grid.Column>
             </Grid.Row>
