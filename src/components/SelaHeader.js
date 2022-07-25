@@ -11,7 +11,7 @@ const SelaHeader = () => {
       <Icon  size='big' style={{
         float:'right',
         color:'#0F4C81',
-        marginRight:'15px'}} name='user'  link="로그인 전:로그인 페이지 , 로그인 후: 마이페이지"></Icon>
+        marginRight:'20px'}} name='user'  link="로그인 전:로그인 페이지 , 로그인 후: 마이페이지"></Icon>
       <Icon  size='big' style={{
         float:'left',
         color:'#0F4C81',
