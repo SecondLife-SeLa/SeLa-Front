@@ -1,10 +1,9 @@
 import "./App.css";
 import SelaHeader from "./components/SelaHeader";
 import {} from "semantic-ui-react";
-import MainPage from "./components/MainPage";
+import MainPage from "./components/mainPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Register from "./components/Register";
-import Job from "./components/Job";
+import Job from "./components/job";
 import Management from "./components/JobPage/management";
 import Finance from "./components/JobPage/finance";
 import Coding from "./components/JobPage/coding";
@@ -17,6 +16,7 @@ import NoMatterEdu from "./components/JobPage/noMatterEdu";
 import Highschool from "./components/JobPage/highschool";
 import Bachelor from "./components/JobPage/bachelor";
 import Doctorate from "./components/JobPage/doctorate";
+import OOcompany from "./components/CompanyInfo/OOcompany";
 
 function App() {
   return (
@@ -25,8 +25,7 @@ function App() {
         <SelaHeader />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/Job" element={<Job />} />
+          <Route path="/job" element={<Job />} />
           <Route path="/management" element={<Management />} />
           <Route path="/finance" element={<Finance />} />
           <Route path="/coding" element={<Coding />} />
@@ -39,6 +38,7 @@ function App() {
           <Route path="/noMatterDuty" element={<NoMatterduty />} />
           <Route path="/noMatterRegion" element={<NoMatterRegion />} />
           <Route path="/noMatterEdu" element={<NoMatterEdu />} />
+          <Route path="/OOcompany" element={<OOcompany />} />
         </Routes>
       </div>
     </BrowserRouter>
