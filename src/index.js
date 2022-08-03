@@ -6,8 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import { AuthProvider } from './components/context/AuthProvider';
 
-import { Button } from 'semantic-ui-react'
-
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
