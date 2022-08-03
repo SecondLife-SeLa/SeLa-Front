@@ -1,4 +1,9 @@
-import "./App.css";
+import './App.css';
+import {
+} from 'semantic-ui-react'
+import Banner from './components/mainBanner';
+import Board from './components/mainBoard';
+import Login from './components/Login';
 import SelaHeader from "./components/SelaHeader";
 import {} from "semantic-ui-react";
 import MainPage from "./components/mainPage";
@@ -19,7 +24,10 @@ import Doctorate from "./components/JobPage/doctorate";
 import OOcompany from "./components/CompanyInfo/OOcompany";
 
 function App() {
+
+
   return (
+
     <BrowserRouter>
       <div className="App">
         <SelaHeader />
