@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
+import { AuthProvider } from './components/context/AuthProvider';
 
 import { Button } from 'semantic-ui-react'
 
@@ -11,7 +12,9 @@ import { Button } from 'semantic-ui-react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <App />,
+  <AuthProvider>
+    <App />
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
