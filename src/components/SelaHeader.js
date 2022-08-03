@@ -7,7 +7,7 @@ const SelaHeader = () => {
       <Link to="/">
         <Image centered src={"selaEx.png"} size={"small"} href="none" />
       </Link>
-      <Link to="/">
+      <Link to="/Login">
         <Icon
           size="big"
           style={{

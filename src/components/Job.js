@@ -1,11 +1,27 @@
 import React from "react";
-import { Card, Icon, Image, Table } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+// import { Card, Icon, Image, Table } from "semantic-ui-react";
+// import { Link } from "react-router-dom";
 
 const Job = () => {
   return (
     <div>
-      <Table
+      <dl className="duty">
+        <dt>직무</dt>
+        <dd>
+          <div>
+            <ul>
+              <li>
+                <input type={"checkbox"}></input>
+              </li>
+              <li>재무 설계</li>
+              <li>코딩</li>
+              <li>무관</li>
+            </ul>
+          </div>
+        </dd>
+      </dl>
+
+      {/* <Table
         style={{
           textAlign: "center",
           width: "80%",
@@ -72,6 +88,7 @@ const Job = () => {
         </Table.Body>
       </Table>
 
+      <h1>공개 이력서</h1>
       <Card.Group
         itemsPerRow={3}
         style={{
@@ -89,19 +106,14 @@ const Job = () => {
             style={{ width: "30%", height: "40%" }}
           />
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header>이름</Card.Header>
             <Card.Meta>
-              <span className="date">Joined in 2015</span>
+              <span className="date">생년월일</span>
             </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
+            <Card.Description>경력</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              22 Friends
-            </a>
+            <a>태그</a>
           </Card.Content>
         </Card>
 
@@ -113,19 +125,14 @@ const Job = () => {
             style={{ width: "30%", height: "40%" }}
           />
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header>이름</Card.Header>
             <Card.Meta>
-              <span className="date">Joined in 2015</span>
+              <span className="date">생년월일</span>
             </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
+            <Card.Description>경력</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              22 Friends
-            </a>
+            <a>태그</a>
           </Card.Content>
         </Card>
         <Card>
@@ -136,19 +143,14 @@ const Job = () => {
             style={{ width: "30%", height: "40%" }}
           />
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header>이름</Card.Header>
             <Card.Meta>
-              <span className="date">Joined in 2015</span>
+              <span className="date">생년월일</span>
             </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
+            <Card.Description>경력</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              22 Friends
-            </a>
+            <a>태그</a>
           </Card.Content>
         </Card>
         <Card>
@@ -159,19 +161,14 @@ const Job = () => {
             style={{ width: "30%", height: "40%" }}
           />
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header>이름</Card.Header>
             <Card.Meta>
-              <span className="date">Joined in 2015</span>
+              <span className="date">생년월일</span>
             </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
+            <Card.Description>경력</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              22 Friends
-            </a>
+            <a>태그</a>
           </Card.Content>
         </Card>
         <Card>
@@ -182,19 +179,14 @@ const Job = () => {
             style={{ width: "30%", height: "40%" }}
           />
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header>이름</Card.Header>
             <Card.Meta>
-              <span className="date">Joined in 2015</span>
+              <span className="date">생년월일</span>
             </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
+            <Card.Description>경력</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              22 Friends
-            </a>
+            <a>태그</a>
           </Card.Content>
         </Card>
         <Card>
@@ -205,22 +197,17 @@ const Job = () => {
             style={{ width: "30%", height: "40%" }}
           />
           <Card.Content>
-            <Card.Header>Matthew</Card.Header>
+            <Card.Header>이름</Card.Header>
             <Card.Meta>
-              <span className="date">Joined in 2015</span>
+              <span className="date">생년월일</span>
             </Card.Meta>
-            <Card.Description>
-              Matthew is a musician living in Nashville.
-            </Card.Description>
+            <Card.Description>경력</Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-              <Icon name="user" />
-              22 Friends
-            </a>
+            <a>태그</a>
           </Card.Content>
         </Card>
-      </Card.Group>
+      </Card.Group> */}
     </div>
   );
 };
