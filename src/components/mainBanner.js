@@ -4,6 +4,8 @@ import {
     Icon,
     Button
 } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
+
 
 const Banner = () => (
   <List horizontal style={
@@ -29,8 +31,10 @@ const Banner = () => (
         <List.Header style={
             {marginTop:'10px',
             marginBottom:'10px'}}>커뮤니티</List.Header>
+        <Link to = "./community">
         <Button icon labelPosition='right'>입장<Icon name='right arrow' />
         </Button>
+        </Link>
       </List.Content>
     </List.Item>
 
@@ -46,8 +50,10 @@ const Banner = () => (
         <List.Header style={
             {marginTop:'10px',
             marginBottom:'10px'}}>재능기부</List.Header>
+        <Link to="./talent">
         <Button icon labelPosition='right'>입장<Icon name='right arrow' />
         </Button>
+        </Link>
       </List.Content>
     </List.Item>
 

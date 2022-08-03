@@ -8,6 +8,8 @@ import {
     Table,
     Label,
     Image,} from 'semantic-ui-react'
+import { Link } from "react-router-dom";
+
 
     const colors = [
         'red',
@@ -47,9 +49,11 @@ const ResponseTable = () => (
 <Header as='h1' content='재능기부' style={style.h1} textAlign='center' />
 
 <Container>
+<Link to = "./talboard">
 <Menu floated='right' style ={{marginBottom : '2em'}}>
              <Menu.Item as='a'>글쓰기</Menu.Item>
            </Menu>
+           </Link>
   <Table celled>
     <Table.Header>
       <Table.Row>

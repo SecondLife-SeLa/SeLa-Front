@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import { Form, Header } from 'semantic-ui-react'
+
+import React, { Component, useState} from 'react'
+import { Form, FormGroup, Header, Input } from 'semantic-ui-react'
+
 
 
 class FormExampleSubcomponentControl extends Component {
@@ -9,18 +11,14 @@ class FormExampleSubcomponentControl extends Component {
 
   render() {
     const { value } = this.state
+
     return (
-        
-      <Form style = {{
-        margin: '50px'
-      }
-      }>
-    <Header as='h1' content = '커뮤니티 작성' textAlign='left' style = {{marginBottom : '20px'}} ></Header>
-    <Form.Field>
-      <label>제목</label>
-      <input placeholder='제목을 입력하세요.' />
-    </Form.Field>
-        <Form.TextArea label='내용'  placeholder='내용을 작성하세요.' />
+      <Form style = {{margin : '150px'}} >
+        <Header as='h1' content = '커뮤니티 작성' textAlign='left' style = {{marginBottom : '40px'}}></Header>
+
+        <Form.Input fluid  placeholder='제목을 입력하세요.'  />
+        <input  type = 'file' multiple accept='image/*' style={{marginBottom: '15px'}}></input>
+        <Form.TextArea  placeholder='내용을 작성하세요.' style ={{minHeight : 500, marginTop : '15px'}} />
         <Form.Button>Submit</Form.Button>
       </Form>
     )

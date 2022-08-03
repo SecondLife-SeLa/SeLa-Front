@@ -5,7 +5,7 @@ import {
     Container,
     Header,
     Table,} from 'semantic-ui-react'
-
+import {Link} from 'react-router-dom'
 
 const style = {
     h1: {
@@ -30,7 +30,9 @@ const ResponseTable = () => (
 
 <Container>
 <Menu floated='right' style ={{marginBottom : '2em'}}>
+  <Link to = "./comboard">
              <Menu.Item as='a'>글쓰기</Menu.Item>
+           </Link>
            </Menu>
   <Table celled>
     <Table.Header>
