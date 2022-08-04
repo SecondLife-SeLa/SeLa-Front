@@ -57,58 +57,63 @@ const Banner = () => (
       </List.Content>
     </List.Item>
 
-    <List.Item style={
-        {borderRadius:'25%', 
-        backgroundColor:'white'}}>
-      <List.Content style={
-        {alignItems:'center',
-        padding:'40px'}}>
-        <Image style={
-            {width:'100px',
-            height:'100px'}} src='lecture.png' verticalAlign='top'/>
-        <List.Header style={
-            {marginTop:'10px',
-            marginBottom:'10px'}}>강연</List.Header>
-        <Button icon labelPosition='right'>입장<Icon name='right arrow' />
+    <List.Item style={{ borderRadius: "25%", backgroundColor: "white" }}>
+      <List.Content style={{ alignItems: "center", padding: "40px" }}>
+        <Image
+          style={{ width: "100px", height: "100px" }}
+          src="lecture.png"
+          verticalAlign="top"
+        />
+        <List.Header style={{ marginTop: "10px", marginBottom: "10px" }}>
+          강연
+        </List.Header>
+        <Button icon labelPosition="right">
+          입장
+          <Icon name="right arrow" />
         </Button>
       </List.Content>
     </List.Item>
 
-    <List.Item style={
-        {borderRadius:'25%', 
-        backgroundColor:'white',
-        padding:'40px'}}>
-      <List.Content style={
-        {alignItems:'center'}}>
-        <Image style={
-            {width:'100px',
-            height:'100px'}} src='job.png' verticalAlign='top'/>
-        <List.Header style={
-            {marginTop:'10px',
-            marginBottom:'10px'}}>재취업/부업</List.Header>
-        <Button icon labelPosition='right'>입장<Icon name='right arrow' />
-        </Button>
+    <List.Item
+      style={{ borderRadius: "25%", backgroundColor: "white", padding: "40px" }}
+    >
+      <List.Content style={{ alignItems: "center" }}>
+        <Image
+          style={{ width: "100px", height: "100px" }}
+          src="job.png"
+          verticalAlign="top"
+        />
+        <List.Header style={{ marginTop: "10px", marginBottom: "10px" }}>
+          재취업/부업
+        </List.Header>
+        <Link to="./Job">
+          <Button icon labelPosition="right">
+            입장
+            <Icon name="right arrow" />
+          </Button>
+        </Link>
       </List.Content>
     </List.Item>
 
-    <List.Item style={
-        {borderRadius:'25%', 
-        backgroundColor:'white',
-        padding:'40px'}}>
-      <List.Content style={
-        {alignItems:'center'}}>
-        <Image style={
-            {width:'100px',
-            height:'100px'}} src='finance.png' verticalAlign='top'/>
-        <List.Header style={
-            {marginTop:'10px',
-            marginBottom:'10px'}}>재무설계</List.Header>
-        <Button icon labelPosition='right'>입장<Icon name='right arrow' />
+    <List.Item
+      style={{ borderRadius: "25%", backgroundColor: "white", padding: "40px" }}
+    >
+      <List.Content style={{ alignItems: "center" }}>
+        <Image
+          style={{ width: "100px", height: "100px" }}
+          src="finance.png"
+          verticalAlign="top"
+        />
+        <List.Header style={{ marginTop: "10px", marginBottom: "10px" }}>
+          재무설계
+        </List.Header>
+        <Button icon labelPosition="right">
+          입장
+          <Icon name="right arrow" />
         </Button>
       </List.Content>
     </List.Item>
   </List>
-)
+);
 
-export default Banner
-
+export default Banner;
