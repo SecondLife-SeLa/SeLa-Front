@@ -14,6 +14,7 @@ import Job from "./components/Job";
 import Management from "./components/management";
 import TextArea from "./community/textArea";
 import TalentArea from "./talents/talentArea";
+import Register from "./components/register";
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
           <Route path="/management" element={<Management />} />
           <Route path="/textArea" element={<TextArea />} />
           <Route path="/talentArea" element={<TalentArea />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </BrowserRouter>
