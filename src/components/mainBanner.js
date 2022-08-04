@@ -1,52 +1,59 @@
-import { Image, List, Icon, Button } from "semantic-ui-react";
+import { 
+    Image, 
+    List,
+    Icon,
+    Button
+} from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
+
 const Banner = () => (
-  <List
-    horizontal
-    style={{
-      margin: 0,
-      paddingRight: 300,
-      paddingLeft: 300,
-      paddingTop: 100,
-      paddingBottom: 100,
-      width: "100%",
-      justifyContent: "space-between",
-      display: "flex",
-      backgroundColor: "#0F4C81",
-    }}
-  >
-    <List.Item style={{ borderRadius: "25%", backgroundColor: "white" }}>
-      <List.Content style={{ alignItems: "center", padding: "40px" }}>
-        <Image
-          style={{ width: "100px", height: "100px" }}
-          src="community.png"
-          verticalAlign="top"
-        />
-        <List.Header style={{ marginTop: "10px", marginBottom: "10px" }}>
-          커뮤니티
-        </List.Header>
-        <Button icon labelPosition="right">
-          입장
-          <Icon name="right arrow" />
+  <List horizontal style={
+    {margin:0,
+    paddingRight:300,
+    paddingLeft:300,
+    paddingTop:100,
+    paddingBottom:100,
+    width:'100%',
+    justifyContent:'space-between',
+    display:'flex',
+    backgroundColor:'#0F4C81'}}>
+
+    <List.Item style={
+        {borderRadius:'25%',
+        backgroundColor:'white'}} >
+      <List.Content style={
+        {alignItems:'center',
+        padding:'40px'}}>
+        <Image style={
+            {width:'100px',
+            height:'100px'}} src='community.png' verticalAlign='top'/>
+        <List.Header style={
+            {marginTop:'10px',
+            marginBottom:'10px'}}>커뮤니티</List.Header>
+        <Link to = "./community">
+        <Button icon labelPosition='right'>입장<Icon name='right arrow' />
         </Button>
+        </Link>
       </List.Content>
     </List.Item>
 
-    <List.Item style={{ borderRadius: "25%", backgroundColor: "white" }}>
-      <List.Content style={{ alignItems: "center", padding: "40px" }}>
-        <Image
-          style={{ width: "100px", height: "100px" }}
-          src="talent.png"
-          verticalAlign="top"
-        />
-        <List.Header style={{ marginTop: "10px", marginBottom: "10px" }}>
-          재능기부
-        </List.Header>
-        <Button icon labelPosition="right">
-          입장
-          <Icon name="right arrow" />
+    <List.Item style={
+        {borderRadius:'25%', 
+        backgroundColor:'white'}}>
+      <List.Content style={
+        {alignItems:'center',
+        padding:'40px'}}>
+        <Image style={
+            {width:'100px',
+            height:'100px'}} src='talent.png' verticalAlign='top'/>
+        <List.Header style={
+            {marginTop:'10px',
+            marginBottom:'10px'}}>재능기부</List.Header>
+        <Link to="./talent">
+        <Button icon labelPosition='right'>입장<Icon name='right arrow' />
         </Button>
+        </Link>
       </List.Content>
     </List.Item>
 
