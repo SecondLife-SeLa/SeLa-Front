@@ -60,10 +60,12 @@ const Banner = () => (
         <List.Header style={{ marginTop: "10px", marginBottom: "10px" }}>
           강연
         </List.Header>
+        <Link to="./lecture">
         <Button icon labelPosition="right">
           입장
           <Icon name="right arrow" />
         </Button>
+        </Link>
       </List.Content>
     </List.Item>
 

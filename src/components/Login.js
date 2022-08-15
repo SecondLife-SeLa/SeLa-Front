@@ -1,8 +1,12 @@
 import {useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "./context/AuthProvider";
-
 import axios from './api/axios';
+import bgImage from './backgroundImage/loginback.mp4'
+import './login.css'
+
+
 const LOGIN_URL = '/login';
+
 
 
 const Login = () => {
@@ -26,12 +30,12 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios({
+                const response = await axios({
                 method: "POST",
                 url: LOGIN_URL,
                 headers: { "Content-type": "application/json" },
                 data:{id: user, pw: pwd},
-              }).catch((err) => console.log(err));
+                }).catch((err) => console.log(err));
               
             console.log(JSON.stringify(response?.data));
             //console.log(JSON.stringify(response));
@@ -40,7 +44,7 @@ const Login = () => {
             setAuth({user,pwd,roles,accessToken});
             setUser('');
             setPwd('');
-            setSuccess(true);
+            setSuccess('true');
             }catch(err){
             if(!err?.response){
                 setErrMsg('서버 응답 없음');
@@ -57,6 +61,10 @@ const Login = () => {
 
 
     return (
+        <div>
+            <video autoPlay loop muted>
+                <source src={bgImage} type="video/mp4" />
+            </video>
         <>
             {success ? (
                 <section>
@@ -100,12 +108,13 @@ const Login = () => {
                 아이디가 없으신가요? <br />
                 <span classname = "line">
                     {/*라우터 링크*/}
-                    <a href="#">회원가입</a>
+                    <a href="./register">회원가입</a>
                 </span>
             </p>
         </section>
             )}
             </>
+            </div>
     )
 }
 

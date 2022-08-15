@@ -50,5 +50,5 @@
   "devDependencies": {
     "webpack-merge": "^5.8.0"
   },
-  "proxy": "http://15.164.219.11:3000"
+  "proxy": "http://52.79.165.10"
 }

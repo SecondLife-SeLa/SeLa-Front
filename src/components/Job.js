@@ -2,6 +2,9 @@ import React from "react";
 import { Card, Icon, Image, Table } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+import axios from './api/axios';
+const JOB_URL = '/job';
+
 const Job = () => {
   return (
     <div>

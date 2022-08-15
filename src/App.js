@@ -23,6 +23,8 @@ import Bachelor from "./components/JobPage/bachelor";
 import Doctorate from "./components/JobPage/doctorate";
 import OOcompany from "./components/CompanyInfo/OOcompany";
 import Register from "./components/register"
+import Lecture from "./components/Lecture"
+
 
 function App() {
 
@@ -50,6 +52,7 @@ function App() {
           <Route path="/noMatterEdu" element={<NoMatterEdu />} />
           <Route path="/OOcompany" element={<OOcompany />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/Lecture" element={<Lecture/>} />
         </Routes>
       </div>
     </BrowserRouter>
