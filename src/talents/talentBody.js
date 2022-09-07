@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   Icon,
   Menu,
@@ -10,6 +10,7 @@ import {
   Image,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const colors = [
   "red",
@@ -43,10 +44,39 @@ const style = {
   },
 };
 
-const ResponseTable = () => (
-  <div>
-    <Header as="h1" content="재능기부" style={style.h1} textAlign="center" />
+function GetData() {
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'http://59.17.12.220:3333/talent',
+      params: {
+         category :  'request',
+         page : 1,
+      },
+      headers: { 
+        "Content-Type": "application/json",
+    
+      }
+    }).then(function (response) {
+      setList(response.data)
+      console.log("Heade With Authentication :" + response)
+      console.log(response.data)
+      console.log(response.status)
+      console.log(response.statusText)
+      console.log(response.headers)
+      console.log(response.config)
+      setList(response.data)
+    })
+    .catch(function (error) {
+      console.log("Error : " +error);
+    });
+})
 
+
+return (
+  <div className="GetData">
+    <Header as="h1" content="재능기부" style={style.h1} textAlign="center" />
     <Container>
       <Link to="/talentArea">
         <Menu floated="right" style={{ marginBottom: "2em" }}>
@@ -76,270 +106,39 @@ const ResponseTable = () => (
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
-
+        {list.map(function(a, i){  
+          return(
         <Table.Body>
           <Table.Row>
-            <Table.Cell>1</Table.Cell>
+            <Table.Cell>{list[i].idx}</Table.Cell>
             <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
+              <Label color="teal">{list[i].category}</Label>
             </Table.Cell>
             <Table.Cell>
               <Header as="h3" image>
                 <Image
                   rounded
                   size="small"
-                  src="/images/wireframe/square-image.png"
                 />
                 <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
+                  {list[i].title}
+                  <Header.Subheader>{list[i].content}</Header.Subheader>
                 </Header.Content>
               </Header>
             </Table.Cell>
             <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
+              <Label color="blue">{list[i].fee}원</Label>
             </Table.Cell>
             <Table.Cell textAlign="center">
               <Label color="teal">모집 중</Label>
             </Table.Cell>
             <Table.Cell></Table.Cell>
           </Table.Row>
-          <Table.Row>
-            <Table.Cell>2</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">구해요</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  아이 돌봐주실 분 구해요
-                  <Header.Subheader>25살 아이</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">무료</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>3</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">구해요</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  대리
-                  <Header.Subheader>골드</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">무료</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집완료</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>4</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>5</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>6</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>7</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>8</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>9</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>10</Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">기부</Label>
-            </Table.Cell>
-            <Table.Cell>
-              <Header as="h3" image>
-                <Image
-                  rounded
-                  size="small"
-                  src="/images/wireframe/square-image.png"
-                />
-                <Header.Content>
-                  집 지어드립니다.
-                  <Header.Subheader>강아지 집</Header.Subheader>
-                </Header.Content>
-              </Header>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="blue">1억</Label>
-            </Table.Cell>
-            <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
-            </Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row></Table.Row>
-        </Table.Body>
+          </Table.Body>
+            )
+        }
+        )}
+
 
         <Table.Footer>
           <Table.Row>
@@ -366,5 +165,5 @@ const ResponseTable = () => (
       </Table>
     </Container>
   </div>
-);
-export default ResponseTable;
+)}
+export default GetData;

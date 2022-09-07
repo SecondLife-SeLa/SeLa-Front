@@ -1,6 +1,7 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { Icon, Menu, Container, Header, Table } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
 const style = {
   h1: {
@@ -18,10 +19,47 @@ const style = {
   },
 };
 
-const ResponseTable = () => (
-  <div>
-    <Header as="h1" content="Community" style={style.h1} textAlign="center" />
+function App() {
+  const [list, setList] = useState([]);
 
+  useEffect(() =>{
+  axios({
+    method: 'get',
+    url: 'http://59.17.12.220:3333/community',
+    params: {
+       category :  'hobby',
+       page : 1,
+    },
+    headers: { 
+      "Content-Type": "application/json",
+  
+    }
+  }).then(function (response) {
+    console.log("Heade With Authentication :" + response)
+    console.log(response.data)
+    console.log(response.status)
+    console.log(response.statusText)
+    console.log(response.headers)
+    console.log(response.config)
+    setList(response.data)
+  })
+  .catch(function (error) {
+    console.log("Error : " +error);
+  });})
+
+
+  return (
+  //   <ul>
+  //   {comBoard.map(community => (
+  //     <li key={community.idx}>
+  //       {community.title} ({community.content})
+  //     </li>
+  //   ))}
+  // </ul>
+  
+
+  <div className="App">
+    <Header as="h1" content="Community" style={style.h1} textAlign="center" />
     <Container>
       <Link to="/textArea">
         <Menu floated="right" style={{ marginBottom: "2em" }}>
@@ -51,89 +89,20 @@ const ResponseTable = () => (
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>
-
+        {list.map(function(a, i){  
+          return(
         <Table.Body>
           <Table.Row>
-            <Table.Cell>1</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>2</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>3</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>4</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>5</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>6</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>7</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>8</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>9</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>10</Table.Cell>
-            <Table.Cell>뭐라하노</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
+            <Table.Cell>{list[i].idx}</Table.Cell>
+            <Table.Cell>{list[i].content}</Table.Cell>
+            <Table.Cell>{list[i].writer}</Table.Cell>
+            <Table.Cell>{list[i].heart}</Table.Cell>
+            <Table.Cell>{list[i].views}</Table.Cell>
+            <Table.Cell>{list[i].write_time}</Table.Cell>
           </Table.Row>
         </Table.Body>
+          )
+        })}
 
         <Table.Footer>
           <Table.Row>
@@ -160,5 +129,5 @@ const ResponseTable = () => (
       </Table>
     </Container>
   </div>
-);
-export default ResponseTable;
+  )}
+export default App;
