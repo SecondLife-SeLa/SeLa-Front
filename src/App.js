@@ -9,7 +9,7 @@ import Talent from "./talents/talentBody";
 import Login from "./components/Login";
 import SelaHeader from "./components/SelaHeader";
 import {} from "semantic-ui-react";
-import MainPage from "./components/MainPage";
+import MainPage from "./components/mainPage";
 import Job from "./components/Job";
 import Management from "./components/management";
 import TextArea from "./community/textArea";

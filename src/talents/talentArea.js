@@ -8,7 +8,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
 //전역변수
-var talEnd;
 var talCategory, talStart, talEnd;
 var category;
 
@@ -21,8 +20,8 @@ const options = [
 const DateSet = () => {
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
-  talStart = startDate+ 3240*10000;
-  talEnd = endDate+ 3240*10000 ;
+  talStart = startDate;
+  talEnd = endDate;
   
   
   return (
@@ -107,14 +106,24 @@ const selectFile = (e) => {
 
 
 const onClickSubmit = () => {
-  alert("성공");
-  
   var talTitle = document.getElementById('title').value;
   var talContent = document.getElementById('content').value;
   var talFee = document.getElementById('fee').value;
+  function dateFormat(date) {
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let second = date.getSeconds();
 
-  // var talEnd = DateSet.endDate;
- 
+    month = month >= 10 ? month : '0' + month;
+    day = day >= 10 ? day : '0' + day;
+    hour = hour >= 10 ? hour : '0' + hour;
+    minute = minute >= 10 ? minute : '0' + minute;
+    second = second >= 10 ? second : '0' + second;
+
+    return date.getFullYear() + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+  }
 
   axios({
     method: 'post',
@@ -124,11 +133,11 @@ const onClickSubmit = () => {
        category :  talCategory,
        title : talTitle,
        content : talContent,
-       fee : talFee,
+       fee : talFee || 0,
        if_end : 0,
        writer : 'jui',
-       startTime : talStart,
-       end_time : talEnd,
+       startTime : dateFormat(talStart),
+       end_time : dateFormat(talEnd),
        images : 'img'
     },
     headers: { 
@@ -136,6 +145,7 @@ const onClickSubmit = () => {
 
     }
   }).then(function (response) {
+    alert('성공')
     console.log("Heade With Authentication :" + response);
     console.log(response.data)
     console.log(response.status)
@@ -144,6 +154,7 @@ const onClickSubmit = () => {
     console.log(response.config)
   })
   .catch(function (error) {
+    alert('실패')
     console.log("Error : " +error);
   });
 }
