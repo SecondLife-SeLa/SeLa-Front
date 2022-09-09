@@ -13,19 +13,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 
 const colors = [
-  "red",
-  "orange",
-  "yellow",
-  "olive",
-  "green",
-  "teal",
-  "blue",
-  "violet",
-  "purple",
-  "pink",
-  "brown",
-  "grey",
-  "black",
+  "red"
 ];
 
 const style = {
@@ -107,6 +95,20 @@ return (
           </Table.Row>
         </Table.Header>
         {list.map(function(a, i){  
+                    if(list[i].if_end = true)
+                    {
+                      list[i].if_end = '모집 중';
+                    } else if (list[i].if_end = false)
+                    {
+                      list[i].if_end = '모집 완료';
+                    }
+                        
+                    if(list[i].category === 'provide') {
+                      list[i].category = "드려요"; 
+                      } else if (list[i].category === 'request') {
+                      list[i].category = "구해요";
+                    }
+          
           return(
         <Table.Body>
           <Table.Row>
@@ -130,9 +132,11 @@ return (
               <Label color="blue">{list[i].fee}원</Label>
             </Table.Cell>
             <Table.Cell textAlign="center">
-              <Label color="teal">모집 중</Label>
+            <Label>{list[i].if_end}</Label>
             </Table.Cell>
-            <Table.Cell></Table.Cell>
+            <Table.Cell>
+            {list[i].start_time.slice(0,10)}     ~ {list[i].end_time?.toString().slice(0,10)} 
+            </Table.Cell>
           </Table.Row>
           </Table.Body>
             )
