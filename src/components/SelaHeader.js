@@ -5,7 +5,7 @@ const SelaHeader = () => {
   return (
     <Segment basic vertical>
       <Link to="/">
-        <Image centered src={"selaEx.png"} size={"small"} href="none" />
+        <Image centered src={"SELA-01.png"} size={"small"} href="none" />
       </Link>
       <Link to="/Login">
         <Icon

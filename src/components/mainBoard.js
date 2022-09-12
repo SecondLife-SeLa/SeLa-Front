@@ -8,14 +8,15 @@ import {
 
  const Board = () => (
     <Segment style={{ 
-        paddingRight: '18em',
-        paddingLeft:'18em',
+        paddingRight: '10em',
+        paddingLeft:'10em',
         width:'100%'}} vertical>
         <Grid celled='internally' columns='equal' stackable>
             <Grid.Row textAlign='center'>
             <Grid.Column style={{ 
                 paddingBottom: '5em', 
                 paddingTop: '5em' ,
+                paddingRight: '12em',
                 padding:'4em'}}>
                 <Header as='h3' style={{ 
                     fontSize: '3em',
@@ -91,6 +92,7 @@ import {
             <Grid.Column style={{ 
                 paddingBottom: '5em', 
                 paddingTop: '5em' ,
+                paddingLeft : '12em',
                 padding:'4em',}}>
                 <Header as='h3' style={{ 
                     fontSize: '3em',
