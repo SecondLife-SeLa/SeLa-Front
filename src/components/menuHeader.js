@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 
 export default class MenuExampleSecondary extends Component {
-  state = { activeItem: 'home' }
+  state = { activeItem: '커뮤니티' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -10,40 +11,50 @@ export default class MenuExampleSecondary extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu secondary widths={7} 
+      <Menu  tabular 
         style = {{
-            marginLeft : '4em'
+            marginLeft : '5em',
+            marginRight : '5em'
         }}
+      
       >
-        <Menu.Item 
-          name='동호회 찾기'
-          active={activeItem === 'home'}
+        <Link to = "./community">
+        <Menu.Item  
+          style = {{marginLeft : '1em', marginRight : '1em '}}
+          name='커뮤니티'
+          active={activeItem === '커뮤니티'}
           onClick={this.handleItemClick}
         />
+        </Link>
+        <Link to="./talent">
         <Menu.Item
-          name='재테크'
-          active={activeItem === 'messages'}
+          style = {{marginLeft : '1em', marginRight : '1em '}}
+          name='재능기부'
+          active={activeItem === '재능기부'}
           onClick={this.handleItemClick}
         />
+        </Link>
+        <Link to="./Job">
         <Menu.Item
-          name='지원금'
-          active={activeItem === 'friends'}
+          style = {{marginLeft : '1em', marginRight : '1em '}}
+          name='강연'
+          active={activeItem === '강연'}
           onClick={this.handleItemClick}
         />
+        </Link>
+        <Link to="./Job">
         <Menu.Item
-          name='건강상식'
-          active={activeItem === 'friends'}
+          style = {{marginLeft : '1em', marginRight : '1em '}}
+          name='재취업・부업'
+          active={activeItem === '재취업・부업'}
           onClick={this.handleItemClick}
         />
-        <Menu.Item
-          name='오늘의 뉴우스'
-          active={activeItem === 'friends'}
-          onClick={this.handleItemClick}
-      />
+        </Link>
+        <Menu.Menu position = "right">
           <Menu.Item>
             <Input icon='search' placeholder='Search...' />
           </Menu.Item>
-
+        </Menu.Menu>
       </Menu>   
     )
   }

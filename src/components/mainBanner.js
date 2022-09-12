@@ -6,7 +6,9 @@ import {
 } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
-
+const ImageExampleFluid = () => (
+  <Image src={"main.png"}fluid />
+)
 const Banner = () => (
   <List horizontal style={
     {margin:0,
@@ -20,7 +22,7 @@ const Banner = () => (
     backgroundColor:'#0F4C81'}}>
 
     <List.Item style={
-        {borderRadius:'25%',
+        {borderRadius:'20%',
         backgroundColor:'white'}} >
       <List.Content style={
         {alignItems:'center',
@@ -116,4 +118,4 @@ const Banner = () => (
   </List>
 );
 
-export default Banner;
+export default ImageExampleFluid;

@@ -136,7 +136,7 @@ const onClickSubmit = () => {
        fee : talFee || 0,
        if_end : 0,
        writer : 'jui',
-       startTime : dateFormat(talStart),
+       start_time : dateFormat(talStart),
        end_time : dateFormat(talEnd),
        images : 'img'
     },
